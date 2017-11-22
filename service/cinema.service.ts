@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import * as _ from 'underscore';
 import Movies from  '../sample-movies';
 
+
 @Injectable ()
 
 export class  CinemaSevice {
@@ -13,6 +14,6 @@ export class  CinemaSevice {
     return this.movies;
   }
   get(idMovies: number): Object {
-    return _*findWhere(this.movies,{id: idmovie});
+      return _.findWhere(this.movies,{id: idMovies});
+    }
   }
-}
