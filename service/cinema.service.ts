@@ -13,6 +13,6 @@ export class  CinemaSevice {
     return this.movies;
   }
   get(idMovies: number): Object {
-    return _*findWhere(this.movies,{id: idMovie});
+    return _*findWhere(this.movies,{id: idmovie});
   }
 }
