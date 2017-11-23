@@ -1,4 +1,11 @@
 <p>
   my-movie-component works!
 </p>
+*ngFor="let movie of movies"
+      <span> {{ movie.id }} </span>
+      <span>{{ movie.name }} </span>
+
+      <button (click)="viewDetails(movie.id)"> details (btn)  </button>
+
+      <a [routerLink]="['movie',movie.id]"> details (link) </a>
 <button (click)="goToHome()"> home </button>
