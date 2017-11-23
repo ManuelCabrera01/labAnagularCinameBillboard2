@@ -72,7 +72,7 @@ const Movies = [
       "Gary Oldman"
     ]
   }, {
-  {
+
     id: 5,
     title: "Schindler's List",
     poster: "https://i.imgur.com/IWZJOmu.jpg",
@@ -91,5 +91,5 @@ const Movies = [
       "Embeth Davidtz"
     ]
   }
-]
+];
  export default Movies;
