@@ -7,19 +7,19 @@ import {RouterModule, Routes} from '@angular/router';
 
 const Routes: Routes = [
  { path: '', redirectTo: 'home', pathMatch: 'full' },
- { path: 'home',  component: MyHomeComponenComponent  },
- { path: 'movie/:id', component:  MyMovieComponentComponent }
+ { path: 'home',  component: MyHomeComponen  },
+ { path: 'movie/:id', component:  MyMovieComponent }
 ];
 
 import { AppComponent } from './app.component';
-import { MyHomeComponenComponent } from './my-home-componen/my-home-componen.component';
-import { MyMovieComponentComponent } from './my-movie-component/my-movie-component.component';
+import { MyHomeComponen } from './my-home-componen/my-home-componen.component';
+import { MyMovieComponent } from './my-movie-component/my-movie-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyHomeComponenComponent,
-    MyMovieComponentComponent
+    MyHomeComponen,
+    MyMovieComponent
   ],
   imports: [
     BrowserModule,
