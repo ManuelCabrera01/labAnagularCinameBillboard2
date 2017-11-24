@@ -1,6 +1,7 @@
-<img style="width: 300px; height: 300px"src="{{ movies.poster }}">
+h2> Room {{movieId}} - <span>{{ movies.title }}</span> </h2>
 
- <h2> Room {{movieId}} - <span>{{ movies.title }}</span> </h2>
+ <img style="width: 300px; height: 300px"src="{{ movies.poster }}">
+
  <ul>
    <li><strong>Genres:</strong> <ul><li *ngFor="let genre of movies.genres">{{ genre }}</li></ul>
       </li>
