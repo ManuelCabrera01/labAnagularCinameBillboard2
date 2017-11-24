@@ -8,14 +8,24 @@ import { Router } from '@angular/router';
 })
 export class MyMovieComponent implements OnInit {
 
-  constructor(private router: Router) { }
+    movieId: number;
+    Movie: Object;
 
-  ngOnInit() {}
-  goToHome() {
-     this.router.navigate(['/home']);  // <!-- Programmatically navigate to home
-   }
+    constructor(private movieinformation: CinemaSevice,
+      private Router: Router) { }
 
-      viewDetails(id) {
-      this.router.navigate(['movie', id]);
+    ngOnInit() {
+      this.Router.paramsResult.subscribe((paramsResult) => this.movieId = Number(paramsResult['id']));
+
+      this.fetchAMovie();
     }
+
+    fetchAMovie() {
+      this.Movie = this.movieinformation.get(this.movieId);
+    }
+
+
+
+  }
+
  }
