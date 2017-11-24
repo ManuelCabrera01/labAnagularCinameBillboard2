@@ -5,13 +5,13 @@ import { HttpModule } from '@angular/http';
 import {RouterModule, Routes} from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { MyHomeComponen } from './my-home-componen/my-home-componen.component';
+import { MyHomeComponent } from './my-home-componen/my-home-componen.component';
 import { MyMovieComponent } from './my-movie-component/my-movie-component.component';
 import {CinemaSevice} from './service/cinema.service'
 
 const Routes: Routes = [
  { path: '', redirectTo: 'home', pathMatch: 'full' },
- { path: 'home',  component: MyHomeComponen  },
+ { path: 'home',  component: MyHomeComponent  },
  { path: 'movie/:id', component:  MyMovieComponent }
 ];
 
@@ -19,7 +19,7 @@ const Routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    MyHomeComponen,
+    MyHomeComponent,
     MyMovieComponent
   ],
   imports: [
@@ -28,7 +28,7 @@ const Routes: Routes = [
     HttpModule,
     RouterModule.forRoot(Routes)
   ],
-  providers: [],
+  providers: [CinemaSevice],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
