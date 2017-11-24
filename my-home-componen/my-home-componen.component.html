@@ -6,13 +6,15 @@
   </div>
    <div class="row">
 
-<ul class = 'col-md-3'>
+    <ul>
+      <div class='col-sm-2'>
   <li *ngFor="let movie of movies">
     <a [routerLink]="['/movie', movie.id]">
-      <p>ROOM {{movie.id}}</p>
-    <img style="width: 300px; height: 300px" src="{{ movie.poster }}">
+      <p>Room {{movie.id}}</p>
+    <img style= 'width: 120px' src="{{ movie.poster }}">
     <p >{{ movie.title }}</p></a>
   </li>
+</div>
 </ul>
 </div>
 </div>
