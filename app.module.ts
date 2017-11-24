@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {RouterModule, Routes} from '@angular/router';
 
+import { AppComponent } from './app.component';
+import { MyHomeComponen } from './my-home-componen/my-home-componen.component';
+import { MyMovieComponent } from './my-movie-component/my-movie-component.component';
 
 const Routes: Routes = [
  { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -11,9 +14,6 @@ const Routes: Routes = [
  { path: 'movie/:id', component:  MyMovieComponent }
 ];
 
-import { AppComponent } from './app.component';
-import { MyHomeComponen } from './my-home-componen/my-home-componen.component';
-import { MyMovieComponent } from './my-movie-component/my-movie-component.component';
 
 @NgModule({
   declarations: [

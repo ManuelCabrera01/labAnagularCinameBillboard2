@@ -14,4 +14,8 @@ export class MyMovieComponent implements OnInit {
   goToHome() {
      this.router.navigate(['/home']);  // <!-- Programmatically navigate to home
    }
+
+      viewDetails(id) {
+      this.router.navigate(['movie', id]);
+    }
  }
