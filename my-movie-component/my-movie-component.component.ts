@@ -12,7 +12,7 @@ import {CinemaSevice} from  '../service/cinema.service';
 export class MyMovieComponent implements OnInit {
 
     movieId: number;
-    Movie: Object;
+    movies: Object;
 
     constructor(private movieinformation: CinemaSevice,
       private Router: ActivatedRoute) { }
@@ -24,7 +24,7 @@ export class MyMovieComponent implements OnInit {
     }
 
     fetchAMovie() {
-      this.Movie = this.movieinformation.get(this.movieId);
+      this.movies = this.movieinformation.get(this.movieId);
     }
 
 
