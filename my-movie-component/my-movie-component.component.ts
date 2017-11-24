@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute} from '@angular/router';
 import {CinemaSevice} from  '../service/cinema.service';
 
 @Component({
@@ -7,16 +7,18 @@ import {CinemaSevice} from  '../service/cinema.service';
   templateUrl: './my-movie-component.component.html',
   styleUrls: ['./my-movie-component.component.css']
 })
+
+
 export class MyMovieComponent implements OnInit {
 
     movieId: number;
     Movie: Object;
 
     constructor(private movieinformation: CinemaSevice,
-      private Router: Router) { }
+      private Router: ActivatedRoute) { }
 
     ngOnInit() {
-      this.Router.paramsResult.subscribe((paramsResult) => this.movieId = Number(paramsResult['id']));
+      this.Router.params.subscribe((params) => this.movieId = Number(params['id']));
 
       this.fetchAMovie();
     }
@@ -28,5 +30,3 @@ export class MyMovieComponent implements OnInit {
 
 
   }
-
- }

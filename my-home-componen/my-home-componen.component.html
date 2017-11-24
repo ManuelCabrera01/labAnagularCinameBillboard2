@@ -1,10 +1,18 @@
 
-<h1>IronHAack cinema</h1>
-<ul>
+<div class="container">
+
+<div class="row">
+  <h1>IronHack cinema</h1>
+  </div>
+   <div class="row">
+
+<ul class = 'col-md-3'>
   <li *ngFor="let movie of movies">
     <a [routerLink]="['/movie', movie.id]">
       <p>ROOM {{movie.id}}</p>
-    <img src="{{ movie.poster }}">
-    <p>{{ movie.title }}</p></a>
+    <img style="width: 300px; height: 300px" src="{{ movie.poster }}">
+    <p >{{ movie.title }}</p></a>
   </li>
 </ul>
+</div>
+</div>

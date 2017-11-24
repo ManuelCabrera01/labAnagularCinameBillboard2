@@ -1,11 +1,23 @@
 <p>
   my-movie-component works!
 </p>
-*ngFor="let movie of movies"
-      <span> {{ movie.id }} </span>
-      <span>{{ movie.name }} </span>
+<div >  genres
 
-      <button (click)="viewDetails(movie.id)"> details (btn)  </button>
-
-      <a [routerLink]="['movie',movie.id]"> details (link) </a>
+ <img src="{{ movies.poster }}">
 <button (click)="goToHome()"> home </button>
+
+ <h2> Room {{movieId}} - <span>{{ movies.title }}</span> </h2>
+ <ul>
+   <li><strong>Genres:</strong> <ul><li *ngFor="let genre of Movie.genres">{{ genre }}</li></ul>
+      </li>
+      <li><strong>Year:</strong> <ul><li>{{ movies.year }}</li></ul>
+      </li>
+      <li><strong>Director:</strong> <ul><li>{{ movies.director }}</li></ul>
+      </li>
+      <li><strong>Actors:</strong> <ul><li *ngFor="let actor of movies.actors">{{ actor }}</li></ul>
+      </li>
+      <li><strong>Schedule:</strong> <ul><li *ngFor="let genre of movies.genres">{{ genre }}</li></ul>
+      </li>
+      <li><strong>Synopsis:</strong> <p>{{ movies.synopsis }}</p>
+      </li>
+ </ul>

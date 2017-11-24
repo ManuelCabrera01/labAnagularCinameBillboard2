@@ -1,5 +1,6 @@
-import { Component, OnInit,ViewEncapsulation} from '@angular/core';
-import {CinemaSevice} from '../service/cinema.service'
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {CinemaSevice} from  '../service/cinema.service';
+
 @Component({
   selector: 'app-my-home-componen',
   templateUrl: './my-home-componen.component.html',
@@ -7,11 +8,17 @@ import {CinemaSevice} from '../service/cinema.service'
    encapsulation: ViewEncapsulation.None,
     providers: [CinemaSevice]
 })
-export class MyHomeComponen implements OnInit {
+export class MyHomeComponent implements OnInit {
 
-  constructor() { }
+  movies: Object[] = [];
+
+  constructor(private movieInfo: CinemaSevice ) { }
 
   ngOnInit() {
+    this.fetchMovies();
   }
 
+  fetchMovies() {
+    this.movies =  this.movieInfo.getMovies();
+  }
 }
