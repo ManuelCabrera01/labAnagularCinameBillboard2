@@ -1,25 +1,32 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import {CinemaSevice} from  '../service/cinema.service';
 
-import { MyMovieComponent } from './my-movie-component.component';
+@Component({
+  selector: 'app-my-movie-component',
+  templateUrl: './my-movie-component.component.html',
+  styleUrls: ['./my-movie-component.component.css']
+})
 
-describe('MyMovieComponent', () => {
-  let component: MyMovieComponent;
-  let fixture: ComponentFixture<MyMovieComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ MyMovieComponent ]
-    })
-    .compileComponents();
-  }));
+export class MyMovieComponent implements OnInit {
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(MyMovieComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    movieId: number;
+    Movie: Object;
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    constructor(private movieinformation: CinemaSevice,
+      private Router: ActivatedRoute) { }
+
+    ngOnInit() {
+      this.Router.params.subscribe((params) => this.movieId = Number(params['id']));
+
+      this.fetchAMovie();
+    }
+
+    fetchAMovie() {
+      this.Movie = this.movieinformation.get(this.movieId);
+    }
+
+
+
+  }
