@@ -1,2 +1,10 @@
 
 <h1>IronHAack cinema</h1>
+<ul>
+  <li *ngFor="let movie of movies">
+    <a [routerLink]="['/movie', movie.id]">
+      <p>ROOM {{movie.id}}</p>
+    <img src="{{ movie.poster }}">
+    <p>{{ movie.title }}</p></a>
+  </li>
+</ul>
