@@ -1,14 +1,8 @@
-<p>
-  my-movie-component works!
-</p>
-<div >  genres
-
- <img src="{{ movies.poster }}">
-<button (click)="goToHome()"> home </button>
+<img style="width: 300px; height: 300px"src="{{ movies.poster }}">
 
  <h2> Room {{movieId}} - <span>{{ movies.title }}</span> </h2>
  <ul>
-   <li><strong>Genres:</strong> <ul><li *ngFor="let genre of Movie.genres">{{ genre }}</li></ul>
+   <li><strong>Genres:</strong> <ul><li *ngFor="let genre of movies.genres">{{ genre }}</li></ul>
       </li>
       <li><strong>Year:</strong> <ul><li>{{ movies.year }}</li></ul>
       </li>
@@ -16,8 +10,7 @@
       </li>
       <li><strong>Actors:</strong> <ul><li *ngFor="let actor of movies.actors">{{ actor }}</li></ul>
       </li>
-      <li><strong>Schedule:</strong> <ul><li *ngFor="let genre of movies.genres">{{ genre }}</li></ul>
-      </li>
+
       <li><strong>Synopsis:</strong> <p>{{ movies.synopsis }}</p>
       </li>
  </ul>
